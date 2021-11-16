@@ -1,0 +1,9 @@
+.move-weather {
+	animation: ani-svg 5s ease-in-out infinite;
+}
+
+@keyframes ani-svg {
+	50% {
+		transform: translateY(-8px);
+	}
+}
