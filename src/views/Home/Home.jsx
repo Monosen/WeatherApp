@@ -21,7 +21,6 @@ const Home = () => {
 				);
 				const result = await reponse.json();
 				setAllWeather(result);
-				console.log(allWeather);
 				setLoader(false);
 			} catch (error) {
 				console.log(error);

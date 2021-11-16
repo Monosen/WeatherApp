@@ -4,6 +4,9 @@ import { useParams } from "react-router";
 //Components
 import ItemMoreData from "../../components/MoreData/ItemMoreData";
 
+//img
+import Country from "../../img/country.png";
+
 const PageMoreData = () => {
 	const { code } = useParams();
 	const [allMoreDataWeather, setAllMoreDataWeather] = useState([]);
@@ -17,22 +20,18 @@ const PageMoreData = () => {
 				);
 				const result = await reponse.json();
 				setAllMoreDataWeather(result);
-				console.log(result);
 			} catch (error) {
 				console.log(error);
 			}
 		};
 		handleFetchApiWeather();
-	}, []);
+	}, [code]);
 
 	return (
 		<div className="bg-first min-h-screen">
 			{allMoreDataWeather.message ? (
 				<div className="h-screen w-full flex justify-center items-center text-white flex-col">
-					<img
-						className="mb-7 w-40"
-						src="https://img.icons8.com/color/240/000000/country.png"
-					/>
+					<img className="mb-7 w-40" src={Country} alt="logo" />
 					<h1 className="text-5xl capitalize text-center">
 						{allMoreDataWeather.message}
 					</h1>
