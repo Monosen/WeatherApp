@@ -13,39 +13,7 @@ import "./ItemMoreData.styles.css";
 const ItemMoreData = (props) => {
 	const { name, deg, code, main, humidity, temperature } = props;
 
-	let days = [
-		"Monday",
-		"Tuesday",
-		"Wednesday",
-		"Thursday",
-		"Friday",
-		"Saturday",
-		"Sunday",
-	];
-	let months = [
-		"January",
-		"February",
-		"March",
-		"April",
-		"May",
-		"June",
-		"July",
-		"August",
-		"September",
-		"October",
-		"November",
-		"December ",
-	];
-
-	const today = new Date();
-	const date =
-		days[today.getDay() - 1] +
-		", " +
-		months[today.getMonth()] +
-		" " +
-		(today.getMonth() + 1) +
-		", " +
-		today.getFullYear();
+	const date = new Date().toLocaleDateString();
 
 	return (
 		<div className="text-white text-center pt-24">
